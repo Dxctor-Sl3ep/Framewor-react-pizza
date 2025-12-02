@@ -1,7 +1,6 @@
 import { CartProvider, useCart } from './contexts/CartContext';
 import Header from './components/Header';
-import PizzaCard from './components/PizzaCard';
-import { pizzas } from './data/pizza';
+import PizzaList from './components/PizzaList';
 import './App.css';
 
 const CartSummary = () => {
@@ -34,11 +33,7 @@ function App() {
             <h2>Bienvenue sur Pizza Shop !</h2>
           </div>
 
-          <div className="pizza-list">
-            {pizzas.map((pizza) => (
-              <PizzaCard key={pizza.id} pizza={pizza} />
-            ))}
-          </div>
+          <PizzaList />
 
           <CartSummary />
         </main>
