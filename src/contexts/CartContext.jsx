@@ -39,10 +39,15 @@ export const CartProvider = ({ children }) => {
         });
     };
 
+    // Vider le panier
+    const emptyCart = () => {
+        setCart([]);
+    };
+
     const totalAmount = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
     return (
-        <CartContext.Provider value={{ cart, addToCart, removeFromCart, totalAmount }}>
+        <CartContext.Provider value={{ cart, addToCart, removeFromCart, emptyCart, totalAmount }}>
             {children}
         </CartContext.Provider>
     );
